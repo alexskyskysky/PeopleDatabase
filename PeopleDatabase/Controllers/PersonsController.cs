@@ -15,9 +15,9 @@ namespace PeopleDatabase.Controllers {
         }
         /*private List<Person> _peopleMock = new List<Person>
         {
-            new Person { Id = 1, Name = "Иван", DateOfBirth = "1980-01-01", Phone = "1234567" },
-            new Person { Id = 2,Name = "Юлия", DateOfBirth = "1985-01-01", Phone = "7891234" },
-            new Person { Id = 3,Name = "Мария", DateOfBirth = "1995-01-01", Phone = "0123456789" }
+            new Person { Id = 1, Name = "Иван", DateOfBirth = new DateTime(1980,1,1), Phone = "1234567" },
+            new Person { Id = 2,Name = "Юлия", DateOfBirth = new DateTime(1985,2,2), Phone = "7891234" },
+            new Person { Id = 3,Name = "Мария", DateOfBirth = new DateTime(1990,3,3), Phone = "0123456789" }
         };
 
         [HttpGet]
@@ -61,7 +61,7 @@ namespace PeopleDatabase.Controllers {
             }
 
             _context.Persons.Remove(person);
-            await _context.SaveChangesAsync();
+            await _context.SaveChangesAsync(); 
             return Ok(person);
         }
     }
